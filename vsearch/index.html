@@ -29,10 +29,11 @@
 						<thead>
 							<tr>
 								<th scope="col" style="">#</th>
+								<th scope="col" style="width: 15%"></th>
 								<th scope="col" style="width: 40%">影片/ 直播名字</th>
-								<th scope="col" style=""></th>
-								<th scope="col" style="width: 20%">作者 (創作者)</th>
-								<th scope="col" style="">傳送門</th>
+								<th scope="col" style="width: 5%"></th>
+								<th scope="col" style="width: 15%">作者 (創作者)</th>
+								<th scope="col" style="width: 5%"></th>
 								<!-- <th scope="col">關鍵字</th> -->
 								<th scope="col" style="">發佈日</th>
 								<th scope="col" style="">官方/ 非官方</th>
@@ -79,6 +80,16 @@
 				return(tmp_td);
 			}
 
+			function create_img_item(url) {
+				tmp_img = "";
+
+				
+				tmp_img += '<img src="' + (url) + '" width= "150cm" />';
+
+				return(tmp_img);
+			}
+
+
 			d3.csv(filepath).then(function (data) {
 				var movies = data;
 				var button = d3.select("#button");
@@ -110,6 +121,7 @@
 							create_td_item( [i+1] ) +
 
 							// videoId,title,lengthSeconds,channelId,author,keywords,publish_date,official
+							create_td_item( create_img_item(output[i]["thumbnail"]) ) +
 							create_td_item( output[i]["title"] ) +
 							create_td_item( create_link_item("video", output[i]["videoId"], "傳送門") ) +
 							create_td_item( output[i]["author"] ) +
