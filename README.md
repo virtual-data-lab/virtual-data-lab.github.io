@@ -16,3 +16,6 @@ VSearch: https://virtual-data-lab.github.io/vsearch/
 Twitter: https://twitter.com/virtualdatalab/
 
 <hr>
+
+資料就是用上一次介紹過的 Repo
+https://github.com/virtual-data-lab/Vtuber-performance-record
