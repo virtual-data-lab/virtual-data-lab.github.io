@@ -8,8 +8,8 @@ function create_link_item(dtype, key, lbl) {
     tmp_a += (key) + '">' + lbl + "</a>";
 
   } else if (dtype=="video") {
-    // tmp_a += '<a target="_blank" href="' + "https://youtu.be/";
-    tmp_a += '<a target="_blank" href="' + "";
+    tmp_a += '<a target="_blank" href="' + "https://youtu.be/";
+    //     tmp_a += '<a target="_blank" href="' + "";
     tmp_a += (key) + '">' + lbl + "</a>";
   }
 
