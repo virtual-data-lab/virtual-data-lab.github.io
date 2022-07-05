@@ -1,7 +1,7 @@
 ![VTLab_banner_small](https://user-images.githubusercontent.com/107298988/175805443-dc806e27-ecb6-4dd6-a075-9c99e4ded87c.jpg)
 
 # VSearch (v0.0.2)
-- 主要版面更新時間: 2022-06-26 16:07 GMT+8
+- 主要版面更新時間: 2022-07-05 10:46 GMT+8
 - 資料更新時間: 2022-07-05 10:35 GMT+8
 
 未來有機會使用不同方式把數據/ 連結呈現出來
