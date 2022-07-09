@@ -43,7 +43,7 @@ d3.csv(filepath).then(function (data) {
   var button = d3.select("#button");
   var form = d3.select("#form");
   button.on("click", querySearch("all"));
-  form.on("submit", querySearch("all"));
+  // form.on("submit", querySearch("all"));
   
   var btn_recent_published = d3.select("#btn_recent_published");
   btn_recent_published.on("click", querySearch("recent"));
