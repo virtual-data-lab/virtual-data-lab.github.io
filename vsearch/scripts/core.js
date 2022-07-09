@@ -58,7 +58,7 @@ d3.csv(filepath).then(function (data) {
   function querySearch(stype= "all") {
 
     d3.select("tbody").html(""); 
-    // d3.event.preventDefault(); 
+    d3.event.preventDefault(); 
 
     var inputValue = d3.select("#user-input").property("value");
 
