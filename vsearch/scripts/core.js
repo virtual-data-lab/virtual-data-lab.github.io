@@ -36,6 +36,7 @@ function create_img_item(url) {
 var parseDate = d3.timeFormat("%Y-%m-%d");
 
 var items = [];
+var cutoffDate;
 // --------------------------------------------------------
 
 d3.csv(filepath).then(function (data) {
@@ -52,14 +53,16 @@ d3.csv(filepath).then(function (data) {
 
     var inputValue = d3.select("#user-input").property("value");
 
-    var cutoffDate = new Date();
+    cutoffDate = new Date();
     cutoffDate.setDate(cutoffDate.getDate() - 2);
 
     var filteredItems = [];
     if (window.location.search.substr(1)==="recent") {
       // items.filter(items => (new Date(items["publish_date"]) > new Date("2022-07-08")));
-      var filteredItems = items.filter(items => (new Date(items["publish_date"]) > cutoffDate));
-      
+      // var filteredItems = items.filter(items => (new Date(items["publish_date"]) > cutoffDate));
+      var filteredItems = items.filter(
+        items => (new Date(items["publish_date"]) > cutoffDate && items["title"].includes("瑪格麗特")));
+
     } else {
       var filteredItems = items.filter(items => items["title"].includes(inputValue)); 
     }
