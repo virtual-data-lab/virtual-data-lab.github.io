@@ -61,7 +61,7 @@ d3.csv(filepath).then(function (data) {
       // items.filter(items => (new Date(items["publish_date"]) > new Date("2022-07-08")));
       // var filteredItems = items.filter(items => (new Date(items["publish_date"]) > cutoffDate));
       var filteredItems = items.filter(
-        items => (new Date(items["publish_date"]) > cutoffDate && items["title"].includes("瑪格麗特")));
+        items => (new Date(items["publish_date"]) > cutoffDate && items["title"].includes(inputValue)));
 
     } else {
       var filteredItems = items.filter(items => items["title"].includes(inputValue)); 
