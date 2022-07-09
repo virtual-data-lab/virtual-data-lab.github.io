@@ -58,7 +58,7 @@ d3.csv(filepath).then(function (data) {
     var filteredItems = [];
     if (window.location.search.substr(1)==="recent") {
       // items.filter(items => (new Date(items["publish_date"]) > new Date("2022-07-08")));
-      items.filter(items => (new Date(items["publish_date"]) > cutoffDate));
+      var filteredItems = items.filter(items => (new Date(items["publish_date"]) > cutoffDate));
       
     } else {
       var filteredItems = items.filter(items => items["title"].includes(inputValue)); 
