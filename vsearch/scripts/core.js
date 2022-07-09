@@ -1,3 +1,42 @@
+var filepath = "https://raw.githubusercontent.com/virtual-data-lab/Vtuber-performance-record/main/_performance.csv";
+
+// --------------------------------------------------------
+
+function create_link_item(dtype, key, lbl) {
+  tmp_a = "";
+
+  if (dtype=="YT") {
+    tmp_a += '<a target="_blank" href="' + "https://www.youtube.com/channel/";
+    tmp_a += (key) + '">' + lbl + "</a>";
+
+  } else if (dtype=="video") {
+    tmp_a += '<a target="_blank" href="' + "https://youtu.be/";
+    //     tmp_a += '<a target="_blank" href="' + "";
+    tmp_a += (key) + '">' + lbl + "</a>";
+  }
+
+  return(tmp_a);
+}
+
+
+function create_td_item(content) {
+  tmp_td = "<td>" + (content) + "</td>"
+  return(tmp_td);
+}
+
+function create_img_item(url) {
+  tmp_img = "";
+  tmp_img += '<img src="' + (url) + '" width= "150cm" />';
+
+  return(tmp_img);
+}
+
+// --------------------------------------------------------
+
+var parseDate = d3.timeFormat("%Y-%m-%d");
+
+// --------------------------------------------------------
+
 d3.csv(filepath).then(function (data) {
   var items = data;
   var button = d3.select("#button");
