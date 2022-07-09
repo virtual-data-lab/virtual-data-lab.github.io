@@ -35,10 +35,11 @@ function create_img_item(url) {
 
 var parseDate = d3.timeFormat("%Y-%m-%d");
 
+var items = [];
 // --------------------------------------------------------
 
 d3.csv(filepath).then(function (data) {
-  var items = data;
+  items = data;
   var button = d3.select("#button");
   var form = d3.select("#form");
   button.on("click", runEnter);
@@ -51,8 +52,17 @@ d3.csv(filepath).then(function (data) {
 
     var inputValue = d3.select("#user-input").property("value");
 
-    var filteredItems = 
-    items.filter(items => items["title"].includes(inputValue));
+    var cutoffDate = new Date();
+    cutoffDate.setDate(cutoffDate.getDate() - 2);
+
+    var filteredItems = [];
+    if (window.location.search.substr(1)==="recent") {
+      // items.filter(items => (new Date(items["publish_date"]) > new Date("2022-07-08")));
+      items.filter(items => (new Date(items["publish_date"]) > cutoffDate));
+      
+    } else {
+      var filteredItems = items.filter(items => items["title"].includes(inputValue)); 
+    }
 
 
     // var output = _.sortBy(xxxxxxxxxxxxxx, "avg_vote").reverse()
