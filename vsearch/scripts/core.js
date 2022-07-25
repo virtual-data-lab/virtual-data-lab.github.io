@@ -24,9 +24,9 @@ function create_td_item(content) {
   return(tmp_td);
 }
 
-function create_img_item(url) {
+function create_img_item(img_id) {
   tmp_img = "";
-  tmp_img += '<img src="' + (url) + '" width= "150cm" />';
+  tmp_img += '<img src="https://i.ytimg.com/vi/' + (img_id) + '/mqdefault.jpg" width= "150cm" />';
 
   return(tmp_img);
 }
@@ -80,8 +80,8 @@ d3.csv(filepath).then(function (data) {
         create_td_item( create_link_item("video", output[i]["videoId"], "傳送門") ) +
         create_td_item( output[i]["author"] ) +
         create_td_item( create_link_item("YT", output[i]["channelId"], "頻道") ) +
-        create_td_item( output[i]["publish_date"] ) +
-        create_td_item( output[i]["official"] )
+        create_td_item( output[i]["publish_date"] )
+        // create_td_item( output[i]["official"] )
       )
 
     }
