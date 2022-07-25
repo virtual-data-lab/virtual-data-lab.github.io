@@ -1,4 +1,4 @@
-var filepath = "https://raw.githubusercontent.com/virtual-data-lab/Vtuber-performance-record/main/_performance.csv";
+var filepath = "https://raw.githubusercontent.com/virtual-data-lab/Vtuber-performance-record/main/_performance_compact.csv";
 
 // --------------------------------------------------------
 
